@@ -1,0 +1,156 @@
+#+title: Solutions to Exercises 0.1 to 0.6 of Pedoe's "Geometry: A Comprehensive Course"
+#+options: num:nil toc:nil
+
+* 0.1
+** Prove \( \overline{z_1 + z_2 + ... + z_n} = \overline{z_1} + \overline{z_2} + ... + \overline{z_n} \)
+Base Case:
+
+Let \( z_1 = (a_1, b_1) \), \( z_2 = (a_2, b_2) \)
+
+Expand \( \overline{z_1 + z_2} \)
+
+\begin{align*} 
+\overline{z_1 + z_2} &= \overline{(a_1, b_1) + (a_2, b_2)} \\
+                     &= \overline{(a_1 + a_2, b_1 + b_2)} \\
+                     &= (a_1 + a_2, -b_1 - b_2) \\
+		     &= (a_1, -b_1) + (a_2, -b_2) \\
+		     &= \overline{(a_1, b_1)} + \overline{(a_2, b_2)} \\
+		     &= \overline{z_1} + \overline{z_2}
+\end{align*}
+
+Inductive Case:
+
+Assuming that for any k complex numbers, \( \overline{z_1 + z_2 + ... + z_k} = \overline{z_1} + \overline{z_2} + ... + \overline{z_k} \) holds, we will show that \( \overline{z_1 + z_2 + ... + z_k + z_{k+1}} = \overline{z_1} + \overline{z_2} + ... + \overline{z_k} + \overline{z_{k+1}} \) also holds. 
+
+Let \( z'_k = z_k + z_{k+1} \)
+
+By the inductive hypothesis,
+
+\( \overline{z_1 + z_2 + ... + z'_k} = \overline{z_1} + \overline{z_2} + ... + \overline{z'_k} \)
+
+By the base case, \( \overline{z'_k} = \overline{z_k + z_{k+1}} = \overline{z_k} + \overline{z_{k+1}} \)
+
+Therefore,
+
+\( \overline{z_1 + z_2 + ... + z_k + z_{k+1}} = \overline{z_1} + \overline{z_2} + ... + \overline{z_k} + \overline{z_{k+1}} \)
+
+QED
+
+** Prove \( \overline{z_1 \cdot z_2 \cdot ... \cdot z_n} = \overline{z_1} \cdot \overline{z_2} \cdot ... \cdot \overline{z_n} \)
+Base Case:
+
+Let \( z_1 = (a_1, b_1) \), \( z_2 = (a_2, b_2) \)
+
+Expand \( \overline{z_1 \cdot z_2} \)
+
+\begin{align*} 
+\overline{z_1 \cdot z_2} &= \overline{(a_1, b_1) \cdot (a_2, b_2)} \\
+                         &= \overline{(a_1a_2 - b_1b_2, a_1b_2 + b_1a_2)} \\
+                         &= (a_1a_2 - b_1b_2, -a_1b_2 - b_1a_2)
+\end{align*}
+
+Expand \( \overline{z_1} \cdot \overline{z_2} \)
+
+\begin{align*}
+\overline{z_1} \cdot \overline{z_2} &= (a_1, -b_1) \cdot (a_2, -b_2) \\
+                                    &= (a_1a_2 - b_1b_2, -a_1b_2 - b_1a_2)
+\end{align*}
+
+so \[ \overline{z_1 \cdot z_2} = \overline{z_1} \cdot \overline{z_2} \]
+
+Inductive Case:
+
+Assuming that for any k complex numbers, \( \overline{z_1 \cdot z_2 \cdot ... \cdot z_k} = \overline{z_1} \cdot \overline{z_2} \cdot ... \cdot \overline{z_k} \) holds, we will show that \( \overline{z_1 \cdot z_2 \cdot ... \cdot z_k \cdot z_{k+1}} = \overline{z_1} \cdot \overline{z_2} \cdot ... \cdot \overline{z_k} \cdot \overline{z_{k+1}} \) also holds.
+
+Let \( z'_k = z_k \cdot z_{k+1} \)
+
+By the inductive hypothesis,
+
+\( \overline{z_1 \cdot z_2 \cdot ... \cdot z'_k} = \overline{z_1} \cdot \overline{z_2} \cdot ... \cdot \overline{z'_k} \)
+
+From the base case, \( \overline{z'_k} = \overline{z_k \cdot z_{k+1}} = \overline{z_k} \cdot \overline{z_{k+1}} \)
+
+Therefore,
+
+\( \overline{z_1 \cdot z_2 \cdot ... \cdot z_k \cdot z_{k+1}} = \overline{z_1} \cdot \overline{z_2} \cdot ... \cdot \overline{z_k} \cdot \overline{z_{k+1}} \)
+
+QED
+
+* 0.2 Show \( |z_1 + z_2 + ... + z_n| \leq |z_1| + |z_2| + ... + |z_n| \)
+We will show this by induction on the number of complex numbers involved.
+
+Base Case:
+
+\( |z_1 + z_2| \leq |z_1| + |z_2| \) is true by the triangle inequality.
+
+Inductive Case:
+
+Assuming \( |z_1 + z_2 + ... + z_k| \leq |z_1| + |z_2| + ... + |z_k| \) holds, we will show that \( |z_1 + z_2 + ... + z_k + z_{k+1}| \leq |z_1| + |z_2| + ... + |z_k| + |z_{k+1}| \) also holds.
+
+Let \( |z'_k| = |z_k| + |z_{k+1}| \) then by the inductive hypothesis \( |z_1 + z_2 + ... + z'_k| \leq |z_1| + |z_2| + ... + |z'_k| \). By the base case, \( |z'_k| = |z_k + z_{k+1}| \leq |z_k| + |z_{k+1}| \) therefore \( |z_1 + z_2 + ... + z_k + z_{k+1}| \leq |z_1| + |z_2| + ... + |z_k| + |z_{k+1}| \).
+
+* 0.3 Prove |z_1 + z_2|^2 + |z_1 - z_2|^2 = 2(|z_1|^2 + |z_2|^2)
+LHS
+\begin{align*}
+& |z_1 + z_2|^2 + |z_1 - z_2|^2 \\
+& (z_1 + z_2)(\overline{z_1} + \overline{z_2}) + (z_1 - z_2)(\overline{z_1} - \overline{z_2}) \\
+& 2(|z_1|^2 + |z_2|^2)
+\end{align*}
+
+which equals the RHS.
+
+QED
+
+The formula can be interpreted as two right angle triangles with the same hypotenuse. The RHS describes a right angle triangle that is always an isosceles triangle with sides \( \sqrt{|z_1|^2 + |z_2|^2} \), \( \sqrt{|z_1|^2 + |z_2|^2} \), \( \sqrt{2(|z_1|^2 + |z_2|^2)} \) and the LHS describes a triangle with sides \( |z_1 + z_2| \), \( |z_1 - z_2| \), \( \sqrt{|z_1 + z_2|^2 + |z_1 - z_2|^2} \).
+
+* 0.4
+** Show \( (z_1 - z_4) \cdot (z_2 - z_3) + (z_2 - z_4) \cdot (z_3 - z_1) + (z_3 - z_4) \cdot (z_1 - z_2) = 0 \)
+Expanding this out and evaluating results in 0.
+
+** Show \( |AD||BC| - |BD||CA| - |CD||AB| \leq 0 \).
+\( |AD||BC| + |BD||CA| + |CD||AB| \) can be represented by \( (z_1 - z_4) \cdot (z_2 - z_3) + (z_2 - z_4) \cdot (z_3 - z_1) + (z_3 - z_4) \cdot (z_1 - z_2) \) which we showed equals 0.
+
+Since \( |AD||BC| - |BD||CA| - |CD||AB| \leq |AD||BC| + |BD||CA| + |CD||AB| = 0 \) and magnitudes are always non-negative, \( |AD||BC| - |BD||CA| - |CD||AB| \leq 0 \).
+
+* 0.5 Express \( (a_1^2 + b_1^2)(a_2^2 + b_2^2) \) as \( a^2 + b^2 \) using \( |z_1 \cdot z_2| = |z_1| \cdot |z_2| \)
+Let \( z_1 = a_1 + b_1i \) and \( z_2 = a_2 + b_2i \)
+
+\begin{align*}
+(a_1^2 + b_1^2)(a_2^2 + b_2^2) &= |z_1|^2 |z_2|^2 \\
+       	 	      	       &= |z_1||z_1||z_2||z_2| \\
+			       &= |z_1 \cdot z_1 \cdot z_2 \cdot z_2| \\
+			       &= |z_1 \cdot z_2|^2 \\
+			       &= |a_1a_2 + a_2b_1i + a_1b_2i - b_1b_2|^2 \\
+			       &= |(a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i|^2 \\
+			       &= (a_1a_2 - b_1b_2)^2 + (a_1b_2 + a_2b_1)^2
+\end{align*}
+
+* 0.6
+** Show that the equation of a circle in the plane can be described by the equation \( |z - z_0| &= r^2 \).
+  First, we will represent the x and y position of points on a circle by the real and imaginary parts of a complex number.
+
+  \[ (x - x_0) + (y - y_0)i \]
+
+ Then we will constrain the equation so that the magnitude squared of the complex number equals r^2 the radius of the circle squared.
+  
+  \[ |(x - x_0) + (y - y_0)i|^2 = r^2 \]
+  
+  Let \( z = x+yi \) and \( z_0 = x_0 + y_0i \)
+  
+\begin{align*}
+  |z - z_0| &= r^2 \\
+  ((x-x_0) + (y - y_0)i)((x-x_0) - (y-y_0)i) &= r^2 \\
+  (x-x_0)^2 + (y-y_0)^2 &= r^2
+\end{align*}
+
+  which is the traditional equation of a circle in a plane.
+
+** Show that \( |z|^2 - z\overline{z_0} - z_0\overline{z} + z_0\overline{z_0} - r^2 = 0 \) is another valid equation describing a circle in a plane.
+
+\begin{align*}
+  |z - z_0|^2 &= r^2 \\
+  (z - z_0)(\overline{z} - \overline{z_0}) &= r^2 \\
+  z \overline{z} - z\overline{z_0} - z_0\overline{z} + z_0\overline{z_0} &= r^2 \\
+  |z|^2 - z\overline{z_0} - z_0\overline{z} + z_0\overline{z_0} - r^2 &= 0
+\end{align*}
+
