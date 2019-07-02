@@ -1,4 +1,5 @@
 #+title: Solutions to Exercises 0.1 to 0.6 of Pedoe's "Geometry: A Comprehensive Course"
+#+author: Joel McBride
 #+options: num:nil toc:nil
 
 * 0.1
