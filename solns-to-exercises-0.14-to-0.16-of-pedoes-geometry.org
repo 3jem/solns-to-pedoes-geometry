@@ -1,0 +1,31 @@
+#+title: Solutions to Exercises 0.14 to 0.16 of Pedoe's "Geometry"
+#+author: Joel McBride
+
+* 0.14 Show that "x - y divides m" defines an equivalent relation 
+** Reflexive property
+\( x - x = 0 \) for all integers x which is divisible by m.
+
+** Symmetric property
+*** Case 1: \( x \) and \( y \) are both divisible by m.  
+We can write \( x \) and \( y \) as \( x =  mk_1 \) and \( y = mk_2 \) for some integers \( k_1 \) and \( k_2 \).
+Then \( x - y = mk_1 - mk_2 = m(k_1 - k_2) \) is divisible by m and \( y - x = mk_2 - m_k1 = m(k_2 - k_1) \) is also divisble by m.
+Therefore the symmetric property holds in this case.
+
+*** Case 2: Either one of \( x \) and \( y \) divide m and the other doesn't.
+Without loss of generality, take x to be divisible by m and y to not be divisible by m.
+We can write x as \( mk_1 \) and y as \( mk_2 + r \) for integers \( k_1 \), \( k_2 \), and \( 1<= r < m \).
+Then \( mk_1 - (mk_2 + r) = m(k_1 - k_2 - 1) + (m - r) \) which is not divisible by m since \( 1 <= m-r < m \) which is not 0.   
+We do not need to consider this case for properties of the relation.
+
+*** Case 3: \( x \) and \( y \) are both not divisible by m.  
+Let \( x = mk_1 + r_1 \) and \( y = mk_2 + r_2 \). Then \( x - y = mk_1 + r_1 - (mk_2 + r_2) = m(k_1 - k_2) + r_1 - r_2 \).
+If and only if \( r_1 - r_2 = 0 \) then \( x - y \) is divisible by m and the relation holds.
+Consider \( y - x = mk_2 + r_2 - (mk_1 + r_1) = m(k_2 - k_1) - (r_1 - r_2) \).
+\( r_1 - r_2) \) can be taken to 0 by the previous consideration.
+Then \( y - x = m(k_2 - k_1) \) which is divisible by m. Therefore the symmetric property holds in this case.
+
+** Transitive property 
+Earlier we showed \( x ~ y \) implies \( x - y = m(k_1 - k_2) \) and \( y ~ x \) implies \( y - x = m(k_2 - k_1) \) by Case 1 and 3 in showing the symmetric property.
+If we add the two equations together we get \( x - y + y - z = mk_1 - mk_2 + mk_2 - mk_3 = m(k_1 - k_3) = x - z \) which shows that \( x - z \) divides m holds.
+Therefore the transitive property holds.
+   
