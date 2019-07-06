@@ -127,7 +127,7 @@ Let \( z_1 = a_1 + b_1i \) and \( z_2 = a_2 + b_2i \)
 \end{align*}
 
 * 0.6
-** Show that the equation of a circle in the plane can be described by the equation \( |z - z_0| &= r^2 \).
+** Show that the equation of a circle in the plane can be described by the equation \( |z - z_0|^2 = r^2 \).
   First, we will represent the x and y position of points on a circle by the real and imaginary parts of a complex number.
 
   \[ (x - x_0) + (y - y_0)i \]

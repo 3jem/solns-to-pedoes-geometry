@@ -12,3 +12,122 @@
 
 From above it can be seen that the modulus is 2, amplitude is \( \frac{\pi}{2} \).
 
+\begin{align*} 
+&  (1 - i)^{2} \\
+&= [\sqrt{2}(\cos(-\frac{\pi}{4}) + \sin(-\frac{\pi}{4}))]^2 \\
+&= 2(\cos(-\frac{\pi}{2}) + \sin(-\frac{\pi}{2})i) \\
+&= -2i
+\end{align*}
+
+It can be seen that the modulus is 2 and the amplitude is \( -\frac{\pi}{2} \).
+
+\begin{align*}
+\frac{(1 + i)^2}{(1 - i)^2} &= \frac{2i}{-2i} \\
+                            &= -1 \\
+                            &= 1 \cdot (cos(\pi) + sin(\pi))
+\end{align*}
+
+It can be seen that the modulus is 1 and the amplitude is \( \pi \).
+
+\begin{align*}
+\frac{(1 - i)^2}{(1 + i)^2} &= \frac{-2i}{2i} \\
+                            &= -1 \\
+                            &= 1 \cdot (cos(\pi) + sin(\pi))
+\end{align*}
+
+The modulus and amplitude are the same as the previous number; modulus is 1 and amplitude \( \pi \).
+
+* 0.8
+** Configurations
+*Note:* Possible values should be \( \theta \), \( -\theta \), \( 2\pi - \theta \), \( -2\pi + \theta \).
+
+If there is no discontinuity in \( \theta \) then,
+\( am(\frac{c-a}{c-b}) = \theta \) if c-a leads c-b and
+\( am(\frac{c-a}{c-b}) = -\theta \) if c-b leads c-a.
+
+If there is a discontinuity in \( \theta \) then,
+\( am(\frac{c-a}{c-b}) = 2\pi - \theta \) if c-a leads c-b and
+\( am(\frac{c-a}{c-b}) = -2\pi + \theta \) if c-b leads c-a.
+
+* 0.9 [Incomplete]
+One family of circles is 
+
+\begin{align*}
+\frac{z-a}{z-b} \overline{\frac{z-a}{z-b}} &= r(\cos(\phi) + \sin(\phi)i) \cdot \overline{r(\cos(\phi) + \sin(\phi)i)} \\
+\frac{|z-a|^2}{|z-b|^2} &= r^2
+\end{align*}
+
+This describes a circle by exercise 0.6.
+We can see that as r approaches 0, z approaches a and as r goes to infinity z approaches b so the limit points of this family of circles is a and b. 
+
+The other family is
+
+\begin{align*}
+am(\frac{z - a}{z - b}) = \phi
+\end{align*}
+
+This describes a circle by the inscribed angle theorem.
+
+https://en.wikipedia.org/wiki/Apollonian_circles shows why the two families of circles are orthogonal coaxial systems of circles.
+
+* 0.10 Show that the 3 roots of \( z^3 = 1 \) are the vertices of an equilateral triangle on the circle |z| = 1
+We observe that \( \cos(\frac{2k\pi}{3}) + i\sin(\frac{2k\pi}{3}) \) satisfies the equation by De Moivre's theorem.
+The values of k where the amplitude is described unambiguous as defined in the book are \( k = -1, 0, 1 \).
+
+** We will show that the points lie on the circle \( |z| = 1 \)
+*** For k = 0
+\begin{align*}
+& \cos(0) + i\sin(0) \\
+=& 1
+\end{align*}
+
+This point is a distance of \( |1| = 1 \) away so it lies on the circle.
+
+*** For k = 1
+\begin{align*}
+& \cos(\frac{2\pi}{3}) + i \sin(\frac{2\pi}{3})
+&= -\frac{1}{2} + i \frac{\sqrt{3}}{2}
+\end{align*}
+
+This point is a distance of \( |-\frac{1}{2} + i \frac{\sqrt{3}}{2}| = \frac{1}{4} + \frac{3}{4} = 1 \) away so it lies on the circle.
+
+*** For k = -1
+\begin{align*}
+& \cos(\frac{-2\pi}{3}) + i \sin(\frac{-2\pi}{3})
+&= -\frac{1}{2} - i \frac{\sqrt{3}}{2}
+\end{align*}
+
+This point is a distance of \( |-\frac{1}{2} - i \frac{\sqrt{3}}{2}| = \frac{1}{4} + \frac{3}{4} = 1 \) away so it lies on the circle.
+
+** We will show that the points are the vertices of an equilateral triangle
+Let a, b, c be 1, \( -\frac{1}{2} + i\frac{\sqrt{3}}{2} \), \( -\frac{1}{2} - i\frac{\sqrt{3}}{2} \) respectively.
+If and only if the points are vertices of an equilateral triangle then \( |a-b| = |b-c| = |c-a| \).
+We will show that \( |a-b| = |b-c| = |c-a| \).
+
+*** \( |a - b| \)
+\begin{align*}
+& |1 - (-\frac{1}{2} + i\frac{\sqrt{3}}{2})| \\
+&= |\frac{3}{2} + i\frac{\sqrt{3}}{2}| \\
+&= \sqrt{\frac{9}{4} + \frac{3}{4}} \\
+&= \sqrt{3}
+\end{align*}
+
+*** \( |b - c| \)
+\begin{align*}
+& |(-\frac{1}{2} + i\frac{\sqrt{3}}{2} - (-\frac{1}{2} - i\frac{\sqrt{3}}{2})| \\
+&= |i\frac{2\sqrt{3}}{2}| \\
+&= \sqrt{3}
+\end{align*}
+
+*** \( |c - a| \)
+\begin{align*}
+& |(-\frac{1}{2} - i\frac{\sqrt{3}}{2} - 1)| \\
+&= |-\frac{3}{2} - i\frac{\sqrt{3}}{2}| \\
+&= \sqrt{\frac{9}{4} + \frac{3}{4}} \\
+&= \sqrt{3}
+\end{align*}
+
+Since \( |a-b| = |b-c| = |c-a| \), the three points are also the vertices of an equilateral triangle.
+* 0.11
+* 0.12
+* 0.13
