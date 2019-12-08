@@ -1,0 +1,23 @@
+#+title: Solutions to Exercises 3.1 to 3.3 of Pedoe's "Geometry: A Comprehensive Course"
+#+author: Joel McBride
+#+options: num:nil toc:nil
+
+* 3.1
+#+attr_html: :width 150px
+#+attr_latex: :width 150px
+[[./fig-exercise-3.1.svg.png]]
+
+* 3.2
+Equivalent by \( k=1-t \) and \( k'=t \). 
+If \( k + k' \neq 0 \) then we can divide and multiply by \( k + k' \) yielding \( \frac{k}{k+k'}((k+k')A) + \frac{k'}{k+k'}((k+k')B) \) which means \( C \) lies on the line defined by the points \( (k+k')A \) and \( (k+k')B \).
+
+* 3.3
+If \( E = \frac{A+C}{2} \) and \( D = \frac{B+C}{2} \) we will show \( E - D = k(A - B) \).
+
+\begin{align*}
+&E - D \\
+&= \frac{A+C}{2} - \frac{B+C}{2} \\
+&= \frac{1}{2} (A - B) 
+\end{align*}
+
+Therefore \( DE \) is parallel to \( BA \).

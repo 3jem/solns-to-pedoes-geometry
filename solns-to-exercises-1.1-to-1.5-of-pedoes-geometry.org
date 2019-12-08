@@ -1,0 +1,90 @@
+#+title: Solutions to Exercises 1.1 to 1.5 of Pedoe's "Geometry: A Comprehensive Course"
+#+author: Joel McBride
+#+options: num:nil toc:nil
+
+* 1.1
+Let \( P = (x_1, x_2) \), \( Q = (y_1, y_2) \), \( R = (z_1, z_2) \), \( S = (t_1, t_2) \).
+By definition, \( \vec{PQ} = \vec{RS} \) iff \( (y_1-x_1, y_2-x_2) = (t_1-z_1, t_2-z_2) \).
+
+** Reflexive property
+   "\( \vec{PQ} = \vec{PQ} \)" means "\( y_1 - x_1 = y_1 - x_1 \) and \( y_2 - x_2 = y_2 - x_2 \)" which holds by reflexivity of algebraic equality.
+
+** Symmetric property
+   "If \( \vec{PQ} = \vec{RS} \) then \( \vec{RS} = \vec{PQ} \)" means algebraically "if \( y_1 - x_1 = t_1 - z_1 \) and \( y_2 - x_2 = t_2 - z_2 \) then \( t_1 - z_1 = y_1 - x_1 \) and \( t_2 - z_2 = y_2 - x_2 \)" which holds by symmetry of algebraic equality.
+
+** Transitive property
+   "If \( \vec{PQ} = \vec{RS} \) and \( \vec{RS} = \vec{TU} \) then \( \vec{PQ} = \vec{TU} \)" means algebraically
+   
+   if
+
+   \begin{align}
+   y_1 - x_1 = t_1 - z_1
+   \end{align}
+
+   and
+
+   \begin{align}
+   y_2 - x_2 = t_2 - z_2
+   \end{align}
+
+   and
+
+   \begin{align}
+   t_1 - z_1 = v_1 - u_1
+   \end{align}
+
+   and
+
+   \begin{align}
+   t_2 - z_2 = v_2 - u_2
+   \end{align}
+
+   then
+   
+   \begin{align}
+   y_1 - x_1 = v_1 - u_1
+   \end{align}  
+   
+   and
+
+   \begin{align}
+   y_2 - x_2 = v_2 - u_2
+   \end{align}
+
+   which holds by transitivity of Equation 1 and Equation 3 and of Equation 2 and Equation 4.
+
+* 1.3
+** \( P + (Q + R) = (P + Q) + R \)
+   The parallelogram with sides \( P \) and \( Q + R \) has the same diagonal as the parallelogram with sides \( P + Q \) and \( R \).
+
+** \( r(P + Q) = rP + rQ \)
+   Stretching the diagonal of the parallelogram with sides \( P \) and \( Q \) by \( r \) is the same as stretching each side by \( r \).
+   
+* 1.4
+\( (P + Q)/2 \) is the midpoint of the line segment \( PQ \).
+
+* 1.5
+Let \( U_1 = (a_1, a_2) \) and \( U_2 = (b_1, b_2) \).
+We will show that numbers \( q_1 \) and \( q_2 \) can be found such that \( P = (x_1, x_2) = q_1U_1 + q_2U_2 \).
+
+\( q_1U_1 + q_2U_2 = (q_1a_1 + q_2b_1, q_1a_2 + q_2b_2) \)
+
+so we have the equations
+
+\begin{align}
+x_1 = q_1a_1 + q_2b_1
+\end{align}
+
+\begin{align}
+x_2 = q_1a_2 + q_2b_2
+\end{align}
+
+Equation 7 x a_2 - Equation 8 x a_1 results in \( q_2 = \frac{a_2x_1 - a_1x_2}{b_1a_2 - b_2a_1} \).
+Equation 7 x b_2 - Equation 8 x b_1 results in \( q_1 = \frac{b_2x_1 - b_1x_2}{a_1b_2 - a_2b_1} \).
+
+Since \( U_1 \) and \( U_2 \) are independent \( b_1a_2 - b_2a_1 \) never equals 0 so numbers \( q_1 \) and \( q_2 \) can always be found.
+
+
+
+   
+   

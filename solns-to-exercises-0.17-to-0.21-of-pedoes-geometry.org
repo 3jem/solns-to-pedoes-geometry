@@ -1,0 +1,110 @@
+#+title: Solutions to Exercises 0.17 to 0.21 of Pedoe's "Geometry: A Comprehensive Course"
+#+author: Joel McBride
+#+options: num:nil toc:nil
+
+* 0.17
+** (i) \( Z = z^2 \)
+Is onto by judicious choice of \( a \) and \( b \). 
+Re and Im components can be made arbitrarily large or small. 
+Is not 1:1 as \( z \) and \( -z \) map to the same element \( z^2 \)
+** (ii) \( Z = x^2 + y^2 \)
+Is not onto as points map only to one quadrant of the Argand plane.
+Is not 1:1 as \( (-x)^2 + i(-y)^2 \) and \( (x)^2 + i(y)^2 \) maps to the same element.
+
+** (iii) \( Z = |z| \)
+Is not onto as it only maps to the real line.
+Is not 1:1 as any elements that are the same distance away map to the same element.
+
+* 0.18 Show that {1, -1} form a group under multiplication
+#+caption: Multiplication table for {1, -1}.
+|  x |  1 | -1 |
+|----+----+----+
+|  1 |  1 | -1 |
+| -1 | -1 |  1 |
+- There exists a set, {1, -1}, and a binary operation, ordinary multiplication. It can be seen by the multiplication table that the set is closed under multiplication.
+- The associative law holds as ordinary multiplication is associative.
+- The identity law holds as 1 satisfies the relations \( 1 \times p = p \times 1 = p \) as seen from the multiplication table.
+- The inverse law holds as the inverse of -1 is -1 and the inverse of 1 is 1. Therefore the inverse exists for all elements in the set under consideration. 
+
+* 0.19
+** a
+Yes
+** b
+No, no inverse of 0.
+** c
+Yes
+** d
+Yes
+** e
+No, no inverse of 0+0i
+
+* 0.20
+Let the set of roots be {1, \( \omega \), \( \omega^2 \), ..., \( \omega^{n-1} \)}
+The multiplication table is
+| x                  | 1                  | \( \omega \)            | ... | \( \omega^{n-1} \)         |
+|--------------------+--------------------+-------------------------+-----+----------------------------|
+| 1                  | 1                  | \( \omega \)            | ... | \( \omega^{n-1} \)         |
+| \( \omega \)       | \( \omega \)       | \( \omega^{2 \mod n} \) | ... | 1                          |
+| .                  | .                  | .                       | ... | .                          |
+| .                  | .                  | .                       | ... | .                          |
+| .                  | .                  | .                       | ... | .                          |
+| \( \omega^{n-1} \) | \( \omega^{n-1} \) | 1                       | ... | \( \omega^{2n-2 \mod n} \) |
+
+- It can be seen from the multiplication table that the set is closed under multiplication.
+- The associative law holds as ordinary multiplication is associative.
+- The identity law holds as 1 satisfies the relations of the identity element.
+- The inverse law holds as the inverse element of \( \omega^i \) is \( \omega^{n-i} \)
+
+* 0.21
+** (i)
+  If \( a = \frac{q_1}{r_1} \) and \( b = \frac{q_2}{r_2} \) are distinct from -1 then,
+
+  \begin{align}
+  \frac{q_1}{r_1} \neq -1
+  \end{align}
+
+  and
+
+  \begin{align}
+  \frac{q_2}{r_2} \neq -1
+  \end{align}
+
+  and Equation 1 x Equation 2
+  
+  \begin{align}
+  \frac{q_1 q_2}{r_1 r_2} \neq 1
+  \end{align}
+  
+  so, Equation 1 + Equation 2 + Equation 3
+  
+  \begin{align}
+  \frac{q_1}{r_1} + \frac{q_2}{r_2} + \frac{q_1 q_2}{r_1 r_2} &\neq -1 + -1 + 1 \\
+  a + b + ab &\neq -1
+  \end{align}
+
+  Since the rationals are closed under addition and multiplication and by Equation 5, the rationals distinct from -1 are closed under *.
+  
+  #+caption: A show of the associative law of *
+  | \( (a*b)*c \)              | \( a*(b*c) \)              |
+  |----------------------------+----------------------------|
+  | \( (a+b+ab)*c \)           | \( a+(b*c)+a(b*c) \)       |
+  | \( (a+b+ab)+c+(a+b+ab)c \) | \( a+(a+b+bc)+a(b+c+bc) \) |
+  | \( a+b+c+ab+ac+bc+abc \)   | \( a+b+c+ab+ac+bc+abc \)   |
+
+  The associative law is shown to hold in Table 2.
+
+  #+caption: A show of the identity law
+  | \( 0*a \)                | \( a*0 \)                | \( a \) |
+  |--------------------------+--------------------------+---------|
+  | \( 0 + a + 0 \times a \) | \( a + 0 + a \times 0 \) | \( a \) |
+  | \( a \)                  | \( a \)                  |         |
+  
+  The identity law is shown to hold in Table 3.
+  
+  By algebraic manipulation the inverse element of p is found to be \( \frac{-p}{1+p} \). Therefore the inverse law holds.
+
+** (ii) 
+   No, as a counterexample the inverse of 1 is \( \frac{-1}{1+1} = \frac{-1}{2} \) which is not in the set of integers. 
+   Therefore, the inverse law doesn't hold and the set of integers doesn't form a group under *.
+   
+  
