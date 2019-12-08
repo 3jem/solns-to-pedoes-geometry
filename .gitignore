@@ -2,3 +2,7 @@
 *.pdf
 *.html
 *~
+*.log
+*.dvi
+*.aux
+*.png

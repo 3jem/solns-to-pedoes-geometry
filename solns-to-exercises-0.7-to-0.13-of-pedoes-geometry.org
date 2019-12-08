@@ -1,4 +1,6 @@
 #+title: Solutions to Exercises 0.7 to 0.13 of Pedoe's Geometry
+#+author: Joel McBride
+#+options: num:nil toc:nil
 
 * 0.7
 \begin{align*}
@@ -128,6 +130,88 @@ We will show that \( |a-b| = |b-c| = |c-a| \).
 \end{align*}
 
 Since \( |a-b| = |b-c| = |c-a| \), the three points are also the vertices of an equilateral triangle.
-* 0.11
+* 0.11 Show that if roots of \( z^3 =1 \) are 1, \( \omega \), \( \omega' \) then 
+** \( \omega' = \omega^2 \)
+\begin{align*}
+(z - 1)(z - \omega)(z - \omega') &= 0 \\
+z^3 + (-\omega - 1 - \omega') z^2 + (\omega + \omega \omega' + \omega')z - \omega \omega' &= 0
+\end{align*}
+
+but \( z^3 = 1 \)
+
+\begin{align*}
+(-\omega - 1 - \omega') z^2 + (\omega + \omega \omega' + \omega')z + 1 - \omega \omega' &= 0
+\end{align*}
+
+In order for this to be true for all z, each coefficent of the powers of z must be 0.
+This produces the following equations.
+
+\begin{align}
+1 + \omega + \omega' &= 0 \\
+\omega + \omega \omega' + \omega' &= 0 \\
+\omega \omega' &= 1
+\end{align}
+
+Substitude equation 1 into equation 4.
+
+\begin{align*}
+\omega( - \omega - 1) &= 1 \\
+-\omega^2 - \omega &= 1
+\end{align*}
+
+Use equation 1 to replace \( \omega \)
+
+\begin{align*}
+-\omega^2 + \omega' + 1 &= 1 \\
+\omega^2 = \omega'
+\end{align*}
+
+** \( 1 + \omega + \omega^2 = 0 \)
+Replacing \( \omega' \) with \( \omega^2 \) in equation 1 results in \( 1 + \omega + \omega^2 = 0 \).
+
 * 0.12
+Expanding \( (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx) \) results in \( x^3 + y^3 + z^3 - 3xyz \).
+
+Let roots of \( x^3 \) be \( 1 \), \( \omega \), \( \omega^2 \).
+These are also the roots of \( y^3 \), \( z^3 \) as changing the variable name doesn't change the value of the roots.
+
+Expanding \( (x + \omega y + \omega^2 z)(x + \omega^2 y + \omega z) \) results in
+
+\begin{align*}
+& x^2 + (\omega^2 + \omega)xy + (\omega + \omega^2)xz + \omega^3 y^2 + (\omega^2 + \omega^4)yz + \omega^3 z^2 \\
+& x^2 + y^2 + z^2 + \omega(1+\omega)xy + \omega(1+\omega)xz \omega(1+\omega)yz
+\end{align*}
+
+which equals \( x^2 + y^2 + z^2 - xy - xz - yz \) by the equations of the previous question.
+Therefore,
+
+\begin{align}
+(x + y + z)(x + \omega y + \omega^2 z)(x + \omega^2 y + \omega z) = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)
+\end{align}
+
 * 0.13
+** \( z^4 \)
+\begin{align*}
+z^4 &= 1 \\
+(\cos\frac{2\pi k}{4} + \sin\frac{2\pi k}{4})^4 &= 1\\
+\textrm{By De Moivre's theorem}
+\cos{2\pi k} + \sin{2\pi k} &= 1
+\end{align*}
+
+Therefore, \( \cos\frac{2\pi k}{4} + \sin\frac{2\pi k}{4})^4 \) are solutions to \( z^4 \).
+k ranges from -1, 0, 1, 2.
+
+The four points are (1,0), (0,1), (-1,0), (0,-1).
+
+** \( z^5 \)
+By same argument as \( z^4 \), solutions to \( z^5 \) are \( \cos\frac{2\pi k}{5} + \sin\frac{2\pi k}{5}) \) are solutions to \( z^4 \).
+k ranges from -2, -1, 0, 1, 2.
+
+The five points are (1,0),
+(\( \cos \frac{2\pi}{5} \),\( \sin \frac{2\pi}{5} \)),
+(\( \cos \frac{4\pi}{5} \),\( \sin \frac{4\pi}{5} \)), 
+(\( \cos \frac{-4\pi}{5} \),\( \sin \frac{-4\pi}{5} \)), 
+(\( \cos \frac{-2\pi}{5} \),\( \sin \frac{-2\pi}{5} \)).
+
+** \( z^n \)
+In general the roots of \( z^n \) are the vertices of an n-gon in the Argand plane.

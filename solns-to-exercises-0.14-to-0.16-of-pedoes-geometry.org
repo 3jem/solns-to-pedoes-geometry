@@ -1,31 +1,46 @@
 #+title: Solutions to Exercises 0.14 to 0.16 of Pedoe's "Geometry"
 #+author: Joel McBride
+#+options: num:nil toc:nil
 
-* 0.14 Show that "x - y divides m" defines an equivalent relation 
+* 0.14 Show that "\( x - y \) divides \( m \)" defines an equivalent relation 
 ** Reflexive property
-\( x - x = 0 \) for all integers x which is divisible by m.
+\( x - x = 0 \) for all integers \( x \) and 0 is divisible by \( m \). Therefore the reflexive property holds.
 
 ** Symmetric property
-*** Case 1: \( x \) and \( y \) are both divisible by m.  
-We can write \( x \) and \( y \) as \( x =  mk_1 \) and \( y = mk_2 \) for some integers \( k_1 \) and \( k_2 \).
-Then \( x - y = mk_1 - mk_2 = m(k_1 - k_2) \) is divisible by m and \( y - x = mk_2 - m_k1 = m(k_2 - k_1) \) is also divisble by m.
+*** Case 1: \( x \) and \( y \) are both divisible by \( m \).  
+Let \( x =  mk_1 \) and \( y = mk_2 \) for some integers \( k_1 \) and \( k_2 \).
+Then \( x - y = mk_1 - mk_2 = m(k_1 - k_2) \) which is divisible by \( m \) and \( y - x = mk_2 - m_k1 = m(k_2 - k_1) \) which is also divisble by \( m \).
 Therefore the symmetric property holds in this case.
 
-*** Case 2: Either one of \( x \) and \( y \) divide m and the other doesn't.
-Without loss of generality, take x to be divisible by m and y to not be divisible by m.
-We can write x as \( mk_1 \) and y as \( mk_2 + r \) for integers \( k_1 \), \( k_2 \), and \( 1<= r < m \).
+*** Case 2: Either one of \( x \) and \( y \) divide \( m \) and the other doesn't.
+Without loss of generality, take \( x \) to be divisible by \( m \) and \( y \) to not be divisible by \( m \).
+We can write \( x \) as \( mk_1 \) and \( y \) as \( mk_2 + r \) for integers \( k_1 \), \( k_2 \), and \( 1<= r < m \).
 Then \( mk_1 - (mk_2 + r) = m(k_1 - k_2 - 1) + (m - r) \) which is not divisible by m since \( 1 <= m-r < m \) which is not 0.   
-We do not need to consider this case for properties of the relation.
+We do not need to consider this case for the properties of the relation.
 
 *** Case 3: \( x \) and \( y \) are both not divisible by m.  
-Let \( x = mk_1 + r_1 \) and \( y = mk_2 + r_2 \). Then \( x - y = mk_1 + r_1 - (mk_2 + r_2) = m(k_1 - k_2) + r_1 - r_2 \).
-If and only if \( r_1 - r_2 = 0 \) then \( x - y \) is divisible by m and the relation holds.
-Consider \( y - x = mk_2 + r_2 - (mk_1 + r_1) = m(k_2 - k_1) - (r_1 - r_2) \).
-\( r_1 - r_2) \) can be taken to 0 by the previous consideration.
-Then \( y - x = m(k_2 - k_1) \) which is divisible by m. Therefore the symmetric property holds in this case.
+Let \( x = mk_1 + r_1 \) and \( y = mk_2 + r_2 \) where \( 1 <= r_1, r_2 < m \). Then \( x - y = mk_1 + r_1 - (mk_2 + r_2) = m(k_1 - k_2) + r_1 - r_2 \).
+If and only if \( r_1 - r_2 = 0 \) then \( x - y \) is divisible by \( m \) and the relation '\( x \sim y \)' holds.
+Consider \( y - x = (mk_2 + r_2) - (mk_1 + r_1) = m(k_2 - k_1) - (r_1 - r_2) \).
+\( r_1 - r_2 \) can be taken to be 0 by the previous consideration.
+Then \( y - x = m(k_2 - k_1) \) which is divisible by \( m \). Therefore the symmetric property holds in this case.
 
 ** Transitive property 
-Earlier we showed \( x ~ y \) implies \( x - y = m(k_1 - k_2) \) and \( y ~ x \) implies \( y - x = m(k_2 - k_1) \) by Case 1 and 3 in showing the symmetric property.
-If we add the two equations together we get \( x - y + y - z = mk_1 - mk_2 + mk_2 - mk_3 = m(k_1 - k_3) = x - z \) which shows that \( x - z \) divides m holds.
+Earlier we showed \( x \sim y \) implies \( x - y = m(k_1 - k_2) \) and \( y \sim x \) implies \( y - x = m(k_2 - k_1) \) by Case 1 and 3 in showing the symmetric property.
+If we add the two equations together we get \( x - y + y - z = mk_1 - mk_2 + mk_2 - mk_3 = m(k_1 - k_3) = x - z \) which shows that \( x - z \) divides \( m \) so the relation '\( x \sim z \)' holds.
 Therefore the transitive property holds.
-   
+** Show that if \( m=2 \) the relation divides the set of integers into odd and even integers
+Take 2 to be an element in one of equivalence classes defined by the relation which we can do since 2 is an integer (in the set under consideration) and the reflexity property holds (\( 2 \sim 2 \)).
+If we choose an arbitrary even integer \( 2k \) then '\( 2k \sim 2 \)' means  '\( 2k - 2 = 2(k - 1) \) is divisible by 2' which is true so all even numbers are in the equivalence class.
+If we choose an arbitrary odd integer \( 2k+1 \) then '\( 2k+1 \sim 2 \)' means '\( 2k+1 - 2 = 2(k-1) + 1 \) is divisible by 2' which is false so no odd numbers are in the equivalence class.
+Since 1 is not in the first equivalence class we examined, let's choose it to be an element in another equivalence class defined by the relation.
+If we choose an arbitrary odd integer \( 2k+1 \) then '\( 2k+1 \sim 1 \)' means '\( 2k+1 - 1 = 2k \) is divisible by 2' which is true so all odd numbers are in this equivalence class.
+Therefore, the relation divides the integers into subsets of even and odd integers.
+
+* 0.15
+The relation 'x and y are both even' does not have the reflexive property so it is not an equivalence relation.
+A counterexample to the reflexive property is '1 and 1 are both even.'
+
+* 0.16
+The proof considers elements that satisfy '\( x \sim y \)' and '\( y \sim x \)' but the reflexive property holds for all elements in \( S \).
+Therefore, we can not dispense with the reflexivity property.
