@@ -53,6 +53,26 @@ By definition, \( \vec{PQ} = \vec{RS} \) iff \( (y_1-x_1, y_2-x_2) = (t_1-z_1, t
 
    which holds by transitivity of Equation 1 and Equation 3 and of Equation 2 and Equation 4.
 
+* 1.2
+The statement is equivalent to the fifth axiom of Euclid.
+** Proof
+The fifth axiom of Euclid is equivalent to Playfair's axiom. Playfair's axiom states: Given a line and a point not on the line, there is one parallel line that can be drawn through the point.
+We will show the proposition P="In the equivalence class which contains a given vector there is always one vector with its number pair at the origin, (0, 0)" is equivalent to Playfair's axiom thus showing it's equivalent to the fifth axiom of Euclid.
+*** P implies Playfair's axiom
+By P, given a vector and a point (the origin) there is one vector (the vector at the origin) that is parallel to the given vector at that point. Changing "vector" to "the lines produced by the start and end points of the vector" turns P into Playfair's axiom.
+
+*** Playfair's axiom implies P
+We can translate a given vector to a given point (the origin) by proposition 2 of Euclid. Since the two vector's are parallel, by Playfair's axiom, the translated vector at the origin is unique.
+
+Therefore P and Playfair's axiom are equivalent.
+QED
+
+** Addition of two free vectors
+Translate vector 1 to the origin, then translate vector 2 to the end point of vector 1. The resulting vector is constructed from the start point of vector 1 to the end point of vector 2.
+
+** Scaling a vector by a real number
+Translate vector to origin. The resulting vector is constructed by keeping the same start point and multiplying each coordinate of the end point by r.
+
 * 1.3
 ** \( P + (Q + R) = (P + Q) + R \)
    The parallelogram with sides \( P \) and \( Q + R \) has the same diagonal as the parallelogram with sides \( P + Q \) and \( R \).

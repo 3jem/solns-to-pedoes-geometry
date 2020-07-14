@@ -51,26 +51,328 @@ If there is a discontinuity in \( \theta \) then,
 \( am(\frac{c-a}{c-b}) = 2\pi - \theta \) if c-a leads c-b and
 \( am(\frac{c-a}{c-b}) = -2\pi + \theta \) if c-b leads c-a.
 
-* 0.9 [Incomplete]
-One family of circles is 
+* 0.9
+Let \( z = x+iy \), \( a = a_x + a_yi \), and \( b = b_x + b_yi \).
 
+** Find limit points of the constant magnitude curves
+*** Find equation of pencil
+The equation for constant magnitude of 
+\begin{equation}
+\label{eq:eq0.9}
+\frac{z-a}{z-b} = r(\cos(\phi) + \sin(\phi)i)
+\end{equation}
+
+is
 \begin{align*}
-\frac{z-a}{z-b} \overline{\frac{z-a}{z-b}} &= r(\cos(\phi) + \sin(\phi)i) \cdot \overline{r(\cos(\phi) + \sin(\phi)i)} \\
+\frac{|z-a|}{|z-b|} = r.
+\end{align*}
+
+Squaring both sides yields,
+\begin{align*}
 \frac{|z-a|^2}{|z-b|^2} &= r^2
 \end{align*}
 
-This describes a circle by exercise 0.6.
-We can see that as r approaches 0, z approaches a and as r goes to infinity z approaches b so the limit points of this family of circles is a and b. 
+Since \( |z-z_0|^2 = ((x-x_0) + (y-y_0)i) ((x-x_0) - (y-y_0)i) = (x-x_0)^2 + (y-y_0)^2 \) where \( z_0 = x_0 + y_0 \),
+\begin{align}
+r^2  &= \frac{(x-a_x)^2 + (y-a_y)^2}{(x-b_x)^2 - (y-b_y)^2} \nonumber \\
+\label{eq:const-mag-in-lambda-over-mu-form}
+-r^2 &= \frac{-(x^2 + y^2 - 2a_xx -2a_yy + a_x^2 + a_y^2)}{x^2 + y^2 - 2b_xx  - 2b_yy + b_x^2 + b_y^2} \\
+\end{align}
 
-The other family is
+We have (see page 107),
+\begin{equation}
+\label{eq:lambda-over-mu}
+\frac{\lambda}{\mu} = -\frac{C'(x,y)}{C(x,y)}
+\end{equation}
 
+where \( C \) and \( C' \) are two different circles in normalized form. I.e.
+\begin{equation}
+\label{eq:C}
+C(x,y) = x^2 + y^2 + 2fx + 2gy + c
+\end{equation}
+
+and
+
+\begin{equation}
+\label{eq:C'}
+C'(x,y) =  x^2 + y^2 + 2f'x + 2g'y + c'.
+\end{equation}
+
+By comparing equation \ref{eq:const-mag-in-lambda-over-mu-form} with \ref{eq:C} and \ref{eq:C'} we find
 \begin{align*}
-am(\frac{z - a}{z - b}) = \phi
+\frac{\lambda}{\mu} &= -r^2 \\
+f &= -b_x \\
+g &= -b_y \\
+c &= b_x^2 + b_y^2 \\
+f' &= -a_x \\
+g' &= -a_y \\
+c' &= a_x^2 + a_y^2
+\end{align*} 
+
+*** Transform equation of pencil to canonical form
+Change the X axis to the axis of circle centers and the Y axis to the radical axis.
+
+The radical axis is determined by computing \( C - C' \).
+\begin{align}
+\label{eq:const-mag-radical-axis}
+C-C' = 0 \nonumber \\
+2(-b_x+a_x)X + 2(-b_y + a_y)Y + b_x^2 + b_y^2 - a_x^2 - a_y^2 = 0
+\end{align}
+
+The axis of circle centers is determined by the line going through the centers of two different circles.
+To determine the two circle centers, complete the square in \( C \) and \( C' \).
+\begin{align*}
+C = (X-b_x)^2 + (Y-b_y)^2 + 2(b_x^2 + b_y^2) \\
+C' = (X-a_x)^2 + (Y-a_y)^2 + 2(a_x^2 + a_y^2)
 \end{align*}
 
-This describes a circle by the inscribed angle theorem.
+Two centers are \( (b_x, b_y) \) and \( (a_x, a_y) \).
+The equation of the line going through those two points is
+\begin{equation}
+\label{eq:const-mag-center-axis}
+Y - b_y = \frac{a_y - b_y}{a_x - b_x} (X - b_x) 
+\end{equation}
 
-https://en.wikipedia.org/wiki/Apollonian_circles shows why the two families of circles are orthogonal coaxial systems of circles.
+The orgin of the new coordinate system in terms of the old one is the point of intersection of the radical axis and the axis of the circle centers.
+We find this point to be
+\begin{equation}
+\label{eq:const-mag-origin}
+(x_0, y_0) = (\frac{b_x + a_x}{2}, \frac{b_y + a_y}{2})
+\end{equation}
+
+The angle of the rotation of the axes is
+\begin{equation}
+\theta = \tan^{-1}(\frac{a_y - b_y}{a_x - b_x})
+\end{equation}
+
+Given coordinates \( x \) and \( y \) of the original system we can find the coordinates \( x' \) and \( y' \) in the new coordinate system by translating the origin of the new coordinate system (equation \ref{eq:const-mag-origin}) to the old one followed by rotating the axes. This is expressed as
+\begin{align}
+\label{eq:x'}
+x' = R_x(\theta, x-x_0, y) \\
+\label{eq:y'}
+y' = R_y(\theta, y-y_0, x)
+\end{align}  
+
+where 
+
+\begin{align*}
+R_x(\theta, x, y) = x\cos(\theta) - y\sin(\theta) \\
+R_y(\theta, y, x) = x\sin(\theta) + y\cos(\theta)
+\end{align*}
+
+Given coordinates \( x' \) and \( y' \) of the new coordinate system we can find the coordinates \( x \) and \( y \) in the old coordinate system by reversing the process.
+\begin{align}
+\label{eq:x}
+x = R_x(-\theta, x', y') + x_0 \\
+\label{eq:y}
+y = R_y(-\theta, y', x') + y_0
+\end{align}  
+
+The canonical equation has form,
+\begin{equation}
+C_T = X'^2 + Y'^2 + 2f_TX' + c_T
+\end{equation}
+(The coefficient of \( Y' \) is 0 since centers all lie on x' axis.)
+
+We now find the coefficients of the canonical equation of C by
+using equations \ref{eq:x} and \ref{eq:y} to replace \( x \) and \( y \) with \( x' \) and \( y' \) in \( C \),
+
+\begin{align*}
+\begin{split}
+&(x' \cos(-\theta) + y'\sin(-\theta) + x_0)^2 + (-x'\sin(-\theta) + y'\cos(-\theta) + y_0)^2 \\
+       &\qquad + 2f(x' \cos(-\theta) + y'\sin(-\theta) + x_0) + 2g(-x'\sin(-\theta) + y'\cos(-\theta) + y_0) \\
+       &\qquad + c
+\end{split}
+\end{align*}
+
+Expanding, collecting terms and noting that the coefficient of \( y' \) is 0.
+\begin{align*}
+\begin{split}
+&x'^2 + y'^2 \\
+&\qquad + 2(x_0\cos(\theta) + y_0\sin(\theta) + f\cos(\theta) + g\sin(\theta))x' \\
+&\qquad + x_0^2 + y_0^2 + 2fx_0 + 2gy_0 + c
+\end{split}
+\end{align*}
+
+Comparing coeeficients with \( C_T \) we find
+\begin{align}
+f_T &= x_0\cos(\theta) + y_0\sin(\theta) + f\cos(\theta) + g\sin(\theta) \nonumber \\
+g_T &= 0 \nonumber \\
+\label{eq:cT}
+c_T &= x_0^2 + y_0^2 + 2fx_0 + 2gy_0 + c
+\end{align}
+We note (page 117) that, \( c_T = c_T' \).
+
+Since 
+\begin{align*}
+c_T &= x_0^2 + y_0^2 + 2fx_0 + 2gy_0 + c \\
+    &= x_0^2 + y_0^2 - 2b_xx_0 - 2b_yy_0 + b_x^2 + b_y^2 \\
+    &= (x_0 - b_x)^2 + (y_0 - b_y)^2 \\
+    &> 0
+\end{align*}
+
+the constant magnitude pencil is a non-intersecting system.
+
+The limiting points (in the new coordinate system) are \( (p, 0) \) and \( (-p, 0) \) where \( p = \sqrt{c_T} \) so
+\begin{equation}
+p  = \frac{1}{2}\sqrt{(x_0-b_x)^2 + (y_0-b_y)^2}
+\end{equation}
+
+Converting back to the coordinates of the old system the limiting points are
+\begin{equation}
+(p\cos(\theta) + x_0, p\sin(\theta) + y_0)
+\end{equation}
+
+and 
+
+\begin{equation}
+(-p\cos(\theta) + x_0, -p\sin(\theta) + y_0)
+\end{equation}
+
+Since \[ \cos(\theta) = \frac{a_x - b_x}{\sqrt{(a_x - b_x)^2 + (a_y - b_y)^2}} \] 
+and \[ \sin(\theta) = \frac{a_y - b_y}{\sqrt{(a_x - b_x)^2 + (a_y - b_y)^2}} \]
+the limiting points are \( (a_x, a_y) \) and \( (b_x, b_y) \).
+
+** Find fixed points of the constant angle curves
+*** Find equation of pencil
+The equation of constant angle of equation \ref{eq:eq0.9} is
+\begin{align*}
+am(\frac{z-a}{z-b}) = \phi
+\end{align*}
+
+For a complex number z with amplitude \theta we have the relation, \[ \frac{Im(z)}{Re(z)} = \tan(\theta) .\]
+Next we find the real and imaginary components of the RHS of equation \ref{eq:eq0.9}.
+
+\begin{align*}
+\begin{split}
+\frac{z-a}{z-b} &= \frac{(x - a_x) + (y - a_y)i}{(x - b_x) + (y - b_y)i} \\
+		&= \frac{(x - a_x) + (y - a_y)i}{(x - b_x) + (y - b_y)i} 
+                    \cdot \frac{(x - b_x) - (y - b_y)i}{(x - b_x) - (y - b_y)i} \\ 
+		&= \frac{x^2 + y^2 + 2(-\frac{1}{2}(a_x + b_x)) + 2(-\frac{1}{2}(a_y + b_y)) + a_xb_x + a_yb_y}{(x-bx)^2 + (y-b_y)^2} \\
+                   &\qquad + \frac{(-a_y + b_y)x + (-b_x + a_x)y + b_xa_y - a_xb_y}{(x-bx)^2 + (y-b_y)^2}i
+\end{split}
+\end{align*}
+
+So,
+\begin{align*}
+\tan(\phi) &= \frac{Im(\frac{z-a}{z-b})}{Re(\frac{z-a}{z-b})} \\
+\tan(\phi) &= \frac{(-a_y + b_y)x + (-b_x + a_x)y + b_xa_y - a_xb_y}{x^2 + y^2 + 2(-\frac{1}{2}(a_x + b_x)) + 2(-\frac{1}{2}(a_y + b_y)) + a_xb_x + a_yb_y}
+\end{align*}
+
+Writing in normal form
+\begin{equation}
+\label{eq:const-angle-pencil}
+\begin{split}
+x^2 + y^2 &+ 2x(\frac{1}{2}(\frac{a_y-b_y}{\tan(\phi)} - a_x - b_x)) \\
+          &+ 2y(\frac{1}{2}(\frac{b_x-a_x}{\tan(\phi)} - a_y - b_y)) \\
+          &+ a_xb_x + a_yb_y + \frac{a_xb_y - a_yb_x}{\tan(\phi)}
+\end{split}
+\end{equation}
+
+A circle of the pencil \( \lambda C + \mu C' \) has normal form
+\begin{align*}
+X^2 + Y^2 + 2X \frac{\lambda f + \mu f'}{\lambda + \mu} + 2Y \frac{\lambda g + \mu g'}{\lambda + \mu} + \frac{\lambda c + \mu c'}{\lambda + \mu}
+\end{align*}
+
+Equivalently, we can change to the one parameter \( \frac{\lambda}{\mu} \) by dividing the numerator and denominator of fractions by \( \mu \)
+\begin{equation}
+\label{eq:circle-of-pencil}
+X^2 + Y^2 + 2X \frac{\frac{\lambda}{\mu} f + f'}{\frac{\lambda}{\mu} + 1}
+    + 2Y \frac{\frac{\lambda}{\mu} g + g'}{\frac{\lambda}{\mu} + 1}
+    + \frac{\frac{\lambda}{\mu} c + c'}{\frac{\lambda}{\mu} + 1} = 0
+\end{equation}
+
+We will put equation \ref{eq:const-angle-pencil} into the form of equation \ref{eq:circle-of-pencil}.
+Let \( \tan(\phi) = \frac{1}{2}(\frac{\lambda}{\mu} + 1) \). Equation \ref{eq:const-angle-pencil} becomes
+
+\begin{equation}
+\label{eq:const-angle-pencil2}
+\begin{split}
+x^2 + y^2 &+ 2x(\frac{a_y - b_y - (a_x + b_x)\frac{\lambda}{\mu}}
+                     {\frac{\lambda}{\mu} + 1}) \\
+          &+ 2y(\frac{b_x - a_x - (a_y + b_y)\frac{\lambda}{\mu}}
+                     {\frac{\lambda}{\mu} + 1}) \\
+          &+ \frac{a_xb_x + a_yb_y + (2a_xb_y - 2a_yb_x + a_xb_x + a_yb_y)\frac{\lambda}{\mu}}{\frac{\lambda}{\mu} + 1} = 0
+\end{split}
+\end{equation}
+
+Comparing equation \ref{eq:const-angle-pencil2} with \ref{eq:circle-of-pencil} we find
+\begin{align*}
+\frac{\lambda}{\mu} &= 2\tan(\phi) - 1 \\
+f &= -\frac{1}{2}(a_x + b_x) \\
+g &= -\frac{1}{2}(a_y + b_y) \\
+c &= a_xb_x + a_yb_y \\
+f' &= a_y - b_y - \frac{1}{2}(a_x + b_x) \\
+g' &= b_x - a_x - \frac{1}{2}(a_y + b_y) \\
+c' &= 2a_xb_y - 2a_yb_x + a_xb_x + a_yb_y
+\end{align*}
+
+*** Transform pencil equation to canonical form
+Change the X axis to the axis of circle centers and the Y axis to the radical axis.
+
+The radical axis is determined by computing \( C - C' \).
+\begin{align}
+\label{eq:const-angle-radical-axis}
+C-C' = 0 \nonumber \\
+-(a_y-b_y)X - (b_x-a_x)Y -a_xb_y + a_yb_x = 0
+\end{align}
+
+The axis of circle centers is determined by the line going through the centers of two different circles.
+To determine the two circle centers, complete the square in \( C \) and \( C' \).
+\begin{align*}
+\begin{split}
+C  &= (X-\frac{1}{2}(a_x+b_x))^2 + (Y-\frac{1}{2}(a_y+b_y))^2 + \frac{1}{4}(a_x+b_x)^2 \\
+      &\qquad + \frac{1}{4}(a_y+b_y)^2 + a_xb_x + a_yb_y
+\end{split} \\
+\begin{split}
+C' &= (X + (a_y - b_y - \frac{1}{2}(a_x+b_x)))^2 + (Y + (b_x - a_x - \frac{1}{2}(a_y + b_y)))^2 \\
+   &\qquad + (a_y - b_y - \frac{1}{2}(a_x+b_x))^2 \\
+   &\qquad + (b_x - a_x - \frac{1}{2}(a_y + b_y))^2 \\
+   &\qquad + 2a_xb_y - 2a_yb_x + a_xb_x + a_yb_y
+\end{split}
+\end{align*}
+
+Two centers are \[ (\frac{1}{2}(a_x+b_x), \frac{1}{2}(a_y+b_y)) \] 
+and \[ (-(a_y-b_y-\frac{1}{2}(a_x+b_x)), -(b_x-a_x-\frac{1}{2}(a_y+b_y))) .\]
+
+The equation of the line going through those two points is
+\begin{equation}
+\label{eq:const-angle-center-axis}
+Y - \frac{1}{2}(a_y+b_y) = \frac{-b_x + a_x}{-a_y+b_y} (X - \frac{1}{2}(a_x+b_x)) 
+\end{equation}
+
+The orgin of the new coordinate system in terms of the old one is the point of intersection of the radical axis and the axis of the circle centers.
+We find this point to be
+\begin{equation}
+\label{eq:const-angle-origin}
+(x_0, y_0) = (\frac{b_x + a_x}{2}, \frac{b_y + a_y}{2})
+\end{equation}
+
+The angle of the rotation of the axes is
+\begin{equation}
+\theta = \tan^{-1}(\frac{-b_x + a_x}{-a_y+b_y})
+\end{equation}
+
+Since (equation \ref{eq:cT}),
+\begin{align*}
+c_T &= x_0^2 + y_0^2 + 2fx_0 + 2gy_0 + c \\
+    &= x_0^2 + y_0^2 - (a_x+b_x)x_0 - (a_y + b_y)y_0 + a_xb_x + a_yb_y \\
+    &= (x_0 - \frac{1}{2}(a_x+b_x))^2 + (y_0 - \frac{1}{2}(a_y + b_y))^2 \\
+      &\qquad - \frac{1}{4}(a_x+b_x)^2 - \frac{1}{4}(a_y+b_y)^2 + a_xb_x + a_yb_y \\
+    &= -\frac{1}{4}(a_x^2 - 2a_xb_x + b_x^2 + a_y^2 - 2a_yb_y + b_y^2) \\
+    &= -\frac{1}{4}((a_x-b_x)^2 + (b_y-a_y)^2) \\
+    &< 0
+\end{align*}
+
+the constant angle pencil is an intersecting system. The fixed points are given by \( (0, p) \) and \( (0, -p) \) in the new coordinate system or \( (-p\sin(\theta) + x_0, p\cos(\theta) + y_0) \) and \( (p\sin(\theta) + x_0, -p\cos(\theta) + y_0) \) in the old one.
+
+Since \[ p = \frac{1}{2}\sqrt{(a_x-b_x)^2 + (a_y+b_y)^2} \]
+and \[ \cos(\theta) = \frac{-a_y + b_y}{\sqrt{(a_x-b_x)^2 + (a_y+b_y)^2}} \] 
+and \[ \sin(\theta) = \frac{-b_x + a_x}{\sqrt{(a_x-b_x)^2 + (a_y+b_y)^2}} \]
+
+The fixed points are \( (b_x, b_y) \) and \( (a_x, a_y) \).
+
+Since the limiting points of the constant magnitude pencil are equal to the fixed points of the constant angle pencil, all the intersections are orthogonal.
 
 * 0.10 Show that the 3 roots of \( z^3 = 1 \) are the vertices of an equilateral triangle on the circle |z| = 1
 We observe that \( \cos(\frac{2k\pi}{3}) + i\sin(\frac{2k\pi}{3}) \) satisfies the equation by De Moivre's theorem.
@@ -130,8 +432,8 @@ We will show that \( |a-b| = |b-c| = |c-a| \).
 \end{align*}
 
 Since \( |a-b| = |b-c| = |c-a| \), the three points are also the vertices of an equilateral triangle.
-* 0.11 Show that if roots of \( z^3 =1 \) are 1, \( \omega \), \( \omega' \) then 
-** \( \omega' = \omega^2 \)
+* 0.11 If roots of \( z^3 =1 \) are 1, \( \omega \), \( \omega' \) then 
+** Show \( \omega' = \omega^2 \)
 \begin{align*}
 (z - 1)(z - \omega)(z - \omega') &= 0 \\
 z^3 + (-\omega - 1 - \omega') z^2 + (\omega + \omega \omega' + \omega')z - \omega \omega' &= 0
@@ -147,26 +449,29 @@ In order for this to be true for all z, each coefficent of the powers of z must 
 This produces the following equations.
 
 \begin{align}
+\label{eq:omega1}
 1 + \omega + \omega' &= 0 \\
+\label{eq:omega2}
 \omega + \omega \omega' + \omega' &= 0 \\
+\label{eq:omega3}
 \omega \omega' &= 1
 \end{align}
 
-Substitude equation 1 into equation 4.
+Solve for \( \omega' \) in equation \ref{eq:omega1} and substitute it into equation \ref{eq:omega3}.
 
 \begin{align*}
 \omega( - \omega - 1) &= 1 \\
 -\omega^2 - \omega &= 1
 \end{align*}
 
-Use equation 1 to replace \( \omega \)
+Use equation \ref{eq:omega1} to replace \( \omega \)
 
 \begin{align*}
 -\omega^2 + \omega' + 1 &= 1 \\
 \omega^2 = \omega'
 \end{align*}
 
-** \( 1 + \omega + \omega^2 = 0 \)
+** Show \( 1 + \omega + \omega^2 = 0 \)
 Replacing \( \omega' \) with \( \omega^2 \) in equation 1 results in \( 1 + \omega + \omega^2 = 0 \).
 
 * 0.12
@@ -185,9 +490,10 @@ Expanding \( (x + \omega y + \omega^2 z)(x + \omega^2 y + \omega z) \) results i
 which equals \( x^2 + y^2 + z^2 - xy - xz - yz \) by the equations of the previous question.
 Therefore,
 
-\begin{align}
-(x + y + z)(x + \omega y + \omega^2 z)(x + \omega^2 y + \omega z) = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)
-\end{align}
+\begin{align*}
+&(x + y + z)(x + \omega y + \omega^2 z)(x + \omega^2 y + \omega z) \nonumber \\
+&= (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)
+\end{align*}
 
 * 0.13
 ** \( z^4 \)
