@@ -499,19 +499,16 @@ Therefore,
 ** \( z^4 \)
 \begin{align*}
 z^4 &= 1 \\
-(\cos\frac{2\pi k}{4} + \sin\frac{2\pi k}{4})^4 &= 1\\
-\textrm{By De Moivre's theorem}
-\cos{2\pi k} + \sin{2\pi k} &= 1
+(\cos\frac{2\pi k}{4} + i\sin\frac{2\pi k}{4})^4 &= 1\\
+\textrm{By De Moivre's theorem} \\
+\cos{2\pi k} + i\sin{2\pi k} &= 1
 \end{align*}
 
-Therefore, \( \cos\frac{2\pi k}{4} + \sin\frac{2\pi k}{4})^4 \) are solutions to \( z^4 \).
-k ranges from -1, 0, 1, 2.
-
-The four points are (1,0), (0,1), (-1,0), (0,-1).
+Therefore, \( \cos\frac{2\pi k}{4} + i\sin\frac{2\pi k}{4} \) where \( k \) ranges from -1, 0, 1, 2 are solutions to \( z^4 \). The four points are (1,0), (0,1), (-1,0), (0,-1).
 
 ** \( z^5 \)
-By same argument as \( z^4 \), solutions to \( z^5 \) are \( \cos\frac{2\pi k}{5} + \sin\frac{2\pi k}{5}) \) are solutions to \( z^4 \).
-k ranges from -2, -1, 0, 1, 2.
+By the same argument as \( z^4 \), solutions to \( z^5 \) are \( \cos\frac{2\pi k}{5} + i\sin\frac{2\pi k}{5} \) where
+\( k \) ranges from -2, -1, 0, 1, 2.
 
 The five points are (1,0),
 (\( \cos \frac{2\pi}{5} \),\( \sin \frac{2\pi}{5} \)),
