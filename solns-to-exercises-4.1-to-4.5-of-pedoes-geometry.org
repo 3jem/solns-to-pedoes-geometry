@@ -4,52 +4,16 @@
 
 * 4.1
 ** Converse of Menelaus' theorem
-Given \( L = xB + x'C \), \( M = yC + y'A \), \( N = zA + z'B \) where \( x+x'=y+y'=z+z'=1 \) and \( xyz = -x'y'z' \)
-for vertices \( A \), \( B \), \( C \) of a triangle show \( L \), \( M \), \( N \) are collinear.
-It is sufficient to show \( L \), \( M \), \( N \) are collinear by showing \( L = (1-t)M + tN \) for some t.
+The converse statement is: For a given triangle \( ABC \) and three points \( L = xB + x'C \), \( M = yC + y'A \), and \( N = zA + z'B \) where \( x+x'=y+y'=z+z' \) on the sides of the triangle, if \( xyz = -x'y'z' \) then the points \( L \), \( M \), and \( N \) are collinear.
+*** Proof
+Suppose \( LM \) meets \( AB \) at point \( N' = wA + w'B \) where \( w+w'=1 \). By Menelaus' theorem, \( xyw = -x'y'w' \). But \( xyz=x'y'z' \) therefore \( z=w \) and \( z'=w' \) which means \( N' = N \). Since \( N \) exists by hypothesis, the supposition is true. Therefore, \( L \), \( M \), and \( N \) are collinear.
+QED
 
-\begin{align*}
-0A + xB + x'C &= (1-t)(yC + y'A) + t(zA + z'B) \\
-              &= ((1-t)y' + tz)A + tz'B + (1-t)yC
-\end{align*}
+** Converse of Ceva's theorem
+The converse statement is: For a given triangle \( ABC \) and points \( L = xB + x'C \), \( M = yC + y'A \), and \( N = zA + z'B \) where \( x+x'=y+y'=z+z' \) on the side of the triangle, if \( xyz = x'y'z' \) then \( AL \), \( BM \), and \( CN \) are concurrent.
 
-The coefficients of both sides sum to 1 so both sides are Barycentric coordinates.
-Therefore each coefficient of \( A \), \( B \), \( C \) on both sides must be equal. i.e. \( 0 = (1-t)y' + tz \) and \( x = tz' \) and \( x' = (1-t)y \).
-
-*** Value of t from coefficients of A
-\begin{align*}
-0 &= (1-t)y' + tz \\
-t &= \frac{y'}{y' - z}
-\end{align*}
-
-since \( y' = 1-y \)
-
-\begin{align*}
-t = \frac{1-y}{1-y-z}
-\end{align*}
-
-since 
-
-\begin{align*}
-xyz &= -x'y'z' \\
-z &= \frac{-(1-y-x+xy)}{-1+y+x}
-\end{align*}
-
-which we can use to eliminate \( z \) in the expression for \( t \).
-After some simplification, we get
-
-\begin{align*}
-t = \frac{-1 + y + x}{y}
-\end{align*}
-
-By proceeding in a similar fashion for the coefficients of \( B \) and \( C \) we get the same result of \( t = \frac{-1 + y + x}{y} \).
-Therefore \( L \), \( M \), \( N \) are collinear.
-
-** Converse of Ceva's Theorem
-Given \( L = xB + x'C \), \( M = yC + y'A \), \( N = zA + z'B \) where \( x+x'=y+y'=z+z'=1 \) and \( xyz = x'y'z' \)
-for vertices \( A \), \( B \), \( C \) of a triangle show \( L \), \( M \), \( N \) are concurrent.
-It is sufficient to show \( L \), \( M \), \( N \) are concurrent by showing \( (1-t)A + tL = (1-u)B + uM = (1-v)C + vN \) for some \( t \), \( u \), \( v \).
-
-\( (1-t)A + t(xB + x'C) = (1-u)B + u(yC + y'A) = (1-v)C + v(zA + z'B) \)
+*** Proof
+Let \( P \) be the intersection of \( AL \) and \( BM \). Let \( N' = wA + w'B \) be the point where \( CP \) cuts \( AB \). By Ceva's theorem, \( xyw = xyw' \). But \( xyz=x'y'z' \) therefore \( w=z \) and \( w'=z' \). Hence \(N=N' \) and all three lines intersect at point P.
+QED
 
 * 4.2
