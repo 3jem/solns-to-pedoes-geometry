@@ -17,3 +17,269 @@ Let \( P \) be the intersection of \( AL \) and \( BM \). Let \( N' = wA + w'B \
 QED
 
 * 4.2
+*Note* \( P \) should be any point within the triangle, not any point within the plane.
+
+The points \( D \), \( E \), and \( F \) can be expressed as,
+\begin{align*}
+D &= \frac{B + C}{2} \\
+E &= \frac{C + A}{2} \\
+F &= \frac{A + B}{2}
+\end{align*}
+
+We're given \( AP \), \( BP \), and \( CP \) meet at oppositive sides \( L \), \( M \), and \( N \).
+By Ceva's Theorem,
+\begin{align*}
+L &= a B + a' C \\
+M &= b C + b' A \\
+N &= c A + c' B
+\end{align*}
+where \( abc = a'b'c' \).
+
+Let \( Q \), \( R \), and \( S \) be the midpoints of \( AL \), \( BM \), and \( CN \) respectively, So,
+\begin{align*}
+Q &= \frac{A + L}{2} \\
+  &= \frac{A + aB + a' C}{2} \\
+R &= \frac{B + M}{2} \\
+  &= \frac{B + bC + b'A}{2} \\
+S &= \frac{C + N}{2} \\
+  &= \frac{C + cA + c'B}{2}
+\end{align*}
+
+Find the meet of line \( DQ \) with \( EF \).
+First, express \( DQ \) in terms of the barycentric coordinates with respect to triangle \( DEF \), 
+\begin{align*}
+DQ &= xD + x' \frac{A + aB + a'C}{2} \\
+   &= xD + x' \left( \frac{A+C}{2} + a \frac{B - C}{2} \right) \\
+   &= xD + x' \left( E + a(F-E) \right) \\
+   &= xD + (x' - ax')E + (ax')F
+\end{align*}
+\( DQ \) is on the line \( EF \) when the \( D \) coordinate is 0. I.e. \( x = 0 \).
+So \( DQ \) meets with \( EF \) at the point \( T = (1-a)E + aF \)
+
+Do the same procedure to find the meet of \( ER \) with \( DF \) and \( FS \) with \( DE \).
+\begin{align*}
+ER &= yE + y' \left( \frac{B + bC + b'A}{2} \right) \\
+   &= yE + y' \left( \frac{B + A}{2} + b \frac{C-A}{2} \right) \\
+   &= yE + y' \left( F + b(D-F) \right) \\
+   &= yE + by'D + (y'-by')F
+\end{align*}
+\( ER \) is on the line \( DF \) when the \( E \) coordinate is 0. I.e. \( y = 0 \). So \( ER \) meets \( DF \) at the point \( U = bD + (1-b)F \).
+\begin{align*}
+FS &= zF + z' \left( \frac{C + cA + c'B}{2} \right) \\
+   &= zF + z' \left( \frac{C+B}{2} + c \frac{A - B}{2} \right) \\
+   &= zF + z' (D + c(E-D)) \\
+   &= zF + (z'-cz')D + cz'E
+\end{align*}
+\( FS \) is on the line \( DE \) when the \( F \) coordinate is 0. I.e. \( z = 0 \). So \( FS \) meets \( DE \) at the point \( V = (1-c)D + cE \).
+
+We now have the setup to use Ceva's theorem.
+The lines \( DQ \), \( ER \), and \( FS \) are concurrent if and only \( (1-a)(1-b)(1-c) = abc \). But this is true by hypothesis. Thus \( DQ \), \( ER \), and \( FS \) are concurrent.
+
+* 4.3
+*Note* The ratio of the external ratio is the negative of the ratio of internal ratio.
+
+\( P_{AB} \), \( P_{AB}' \), \( P_{BC} \), \( P_{BC}' \), \( P_{CA} \), and \( P_{CA}' \) satisfy the following,
+\begin{align*}
+P_{AB} = aA + a'B \quad \text{where \( \frac{a}{a'} = \frac{k_1}{k_2} \)} \\
+P_{AB}' = bA+ b'B \quad \text{where \( \frac{b}{b'} = -\frac{k_1}{k_2} \)} \\
+P_{BC} = cB + c'C \quad \text{where \( \frac{c}{c'} = \frac{k_2}{k_3} \)} \\
+P_{BC}' = dB + d'C \quad \text{where \( \frac{d}{d'} = -\frac{k_2}{k_3} \)} \\
+P_{CA} = fC + f'A \quad \text{where \( \frac{f}{f'} = \frac{k_3}{k_1} \)} \\
+P_{CA} = gC + g'A \quad \text{where \( \frac{g}{g'} = -\frac{k_3}{k_1} \)} \\
+\end{align*}
+
+Using Ceva's theorem, \( AP_{BC} \), \( BP_{CA} \), and \( CP_{AB} \) are concurrent if \( acf = a'c'f' \).
+We start with the LHS,
+\begin{align*}
+& acf \\
+&= \left( a' \frac{k_1}{k_2} \right) \left( c' \frac{k_2}{k_3} \right) \left( f' \frac{k_3}{k_1} \right) \\
+&= a' c' f'
+\end{align*}
+Q.E.D.
+
+\( P_{CA}P_{AB} \) contains \( P_{BC}' \) if the point of intersection of \(  P_{CA}P_{AB} \) with \( BC \) is \( P_{BC}' \). This occurs when \(  P_{CA}P_{AB} \) cuts \( BC \) with the same ratio that \( P_{BC}' \) cuts \( BC \).
+The line \( P_{CA}P_{AB} \) can be expressed as,
+\begin{align*}
+P_{CA}P_{AB} &= xP_{CA} + x'P_{AB} \\
+             &= x(fC + f'A) + x'(aA + a'B) \\
+             &= xfC + (xf' + x'a)A + x'a'B
+\end{align*}
+The line meets \( BC \) when the coefficient of \( A \) is 0. I.e.
+\( xf'+x'a = 0 \) or \( x = -a/(f'-a) \).
+When the coefficient of \( A \) is 0, the coefficient of \( B \) is,
+\begin{align*}
+x'a' &= \left( 1-\frac{-a}{f'-a} \right) a' \\
+     &= \frac{f'a'}{f'-a}
+\end{align*}
+and the coefficient of \( C \) is,
+\begin{align*}
+xf &= \frac{-a}{f' - a}f \\
+   &= \frac{-af}{f'-a}
+\end{align*}
+So, \( P_{CA}P_{AB} \) cuts \( BC \) at,
+\begin{align*}
+\frac{x'a'}{xf} &= \frac{\frac{f'a'}{f'-a}}{\frac{-af}{f'-a}} \\
+                &= \frac{-f'a'}{af} \\
+                &= -\frac{k_2}{k_1} \frac{k_1}{k_3} \\
+                &= -\frac{k_2}{k_3} 
+\end{align*}
+which is the ratio that \( P_{BC}' \) cuts \( BC \). Therefore, \( P_{CA}P_{AB} \) contains \( P_{BC}' \). Q.E.D.
+
+By Menelaus' Theorem, \( P_{AB}' \), \( P_{BC}' \), and \( P_{CA}' \) are collinear if \( bdg = -b'd'g' \).
+We start with the LHS,
+\begin{align*}
+& bdg \\
+&= \left( -b' \frac{k_1}{k_2} \right) \left( -d' \frac{k_2}{k_3} \right) \left( -g' \frac{k_3}{k_1} \right) \\
+&= -b'd'g'
+\end{align*}
+Q.E.D.
+
+* 4.4
+Let \( P = aA + bB + cC \) where \( 0 < a,b,c < 1 \).
+\( L \), \( M \), and \( N \) are the points,
+\begin{align*}
+L &= P + (C - P) + (B-P) \\
+  &= B + C - P \\
+M &= P + (A-P) + (C-P) \\
+  &= A + C - P \\
+N &= P + (A-P) + (B-P) \\
+  &= A + B - P
+\end{align*}
+We show \( AL \) bisects \( BM \).
+\begin{align*}
+AL &= BM \\
+xA + x'L &= yB + y'M \\
+xA + x'(B+C-P) &= yB + y'(A+C-P) \\
+xA + x'(A+C-aA-bB-cC) &= yB + y'(A+C-aA-bB-cC) \\
+(x-ax')A + x'(1-b)B + x'(1-c)C &= y'(1-a)A + (y-by')B + y'(1-c)C 
+\end{align*}
+Equating the coefficients of \( A \)'s, \( B \)'s, and \( C \)'s we get,
+\begin{align}
+\label{eq:ALBM1}
+x- ax' &= y'(1-a) \\
+\label{eq:ALBM2}
+x'(1-b) &= y-by' \\
+\label{eq:ALBM3}
+x'(1-c) &= y'(1-c)
+\end{align}
+Since \( c \neq 1 \), Equation \ref{eq:ALBM3} implies \( x' = y' \) which implies \( x = y \).
+Equation \ref{eq:ALBM1} then tells us,
+\begin{align*}
+(1-x') - a x' &= x' - ax' \\
+(1+a+1-a)x' &= 1 \\
+x' &= 1/2
+\end{align*}
+which implies \( x, y, y' \) are also 1/2. Equation \ref{eq:ALBM2} tells us nothing new. Therefore, \( AL \) bisects \( BM \).
+
+Now we need to show \( BM \) bisects \( CN \). 
+\begin{align*}
+BM &= CN \\
+xB + x'M &= yC + y'N \\
+xB + x'(A+C-P) &= yC + y'(A+B-P) \\
+x'(1-a)A + (x-bx')B + x'(1-c)C &= y'(1-a)A + y'(1-b)B + (y-cy')C 
+\end{align*}
+Equating coefficients on both sides of the equations we get,
+\begin{align}
+\label{eq:BMCN1}
+x'(1-a) &= y'(1-a) \\
+\label{eq:BMCN2}
+x-bx' &= y'(1-b) \\
+\label{eq:BMCN3}
+x'(1-c) &= y-cy'
+\end{align}
+Since \( a \neq 1 \), Equation \ref{eq:BMCN1} tells us \( x'=y' \) which implies \( x=y \).
+Equation \ref{eq:BMCN2} tells us,
+\begin{align*}
+(1-x') - bx' &= x'(1-b) \\
+(1-b+b+1)x' &= 1 \\
+x' &= 1/2
+\end{align*}
+which implies \( x,y,y' \) also equals 1/2. Therefore \( BM \) bisects \( LN \).
+Q.E.D.
+
+
+* 4.5
+We're given,
+\begin{align*}
+P &= xB + x'C \\
+Q &= xC + x'A \\
+R &= xA + x'B
+\end{align*}
+The centroid of \( PQR \) is,
+\begin{align*}
+& \frac{P+Q+R}{3} \\
+&= \frac{(xB+x'C)+(xC+x'A)+(xA+x'B)}{3} \\
+&= \frac{(x+x')A + (x+x')B + (x+x')C}{3} \\
+&\text{But \( x+x'=1 \)} \\
+&= \frac{A+B+C}{3}
+\end{align*}
+which is the centroid of \( ABC \). Q.E.D.
+
+Completing the parallelograms gives \( L = A + (B-A) + (Q-A) = B+Q-A \) and \( M = A + (C-A) + (R-A) = C+R-A \).
+Let \( N \) be the centroid of \( ABC \) and \( PQR \).
+First we show \( RL \) is parallel to \( NA \).
+We have,
+\begin{align*}
+RL &= yR + y'L \\
+   &= yR + y'(B+Q-A) \\
+   &= y(xA+x'B) + y'(B+Q-A) \\
+   &= y(xA+x'B) + y'(B+xC+x'A - A) \\
+   &= (yx + y'x' -y')A + (yx' + y')B + y'xC
+\end{align*}
+and
+\begin{align*}
+NA &= zM + z'A \\
+   &= z \frac{A + B + C}{3} + z'A \\
+   &= \left( \frac{z}{3} + z' \right) A + \frac{z}{3}B + \frac{z}{3}C
+\end{align*}
+Next we find when \( RL \) and \( NA \) intersect.
+\begin{align}
+\label{eq:4.5a}
+yx + y'x' - y' &= \frac{z}{3} + z' \\
+\label{eq:4.5b}
+yx' + y' = \frac{z}{3} \\
+\label{eq:4.5c}
+y'x = \frac{z}{3}
+\end{align}
+By Equations \ref{eq:4.5b} and \ref{eq:4.5c},
+\begin{align*}
+yx' + y' &= y'x \\
+(1-y')x' - y'(1-x') + y' &= 0 \\
+x' - y'x' - y' + y'x' + y' &= 0 \\
+x' = 0
+\end{align*}
+which implied \( x = 1 \).
+When \( x=1 \), Equations \ref{eq:4.5a}, \ref{eq:4.5b}, and \ref{eq:4.5c} all hold. Therefore, \( RL \) and \( NA \) are the same line. If \( x \neq 1 \), then \( RL \) and \( NA \) do not intersect. Therefore, \( RL \) is always parallel to \( NA \).
+
+Now we show \( QM \) is parallel to \( NA \).
+We have,
+\begin{align*}
+QM &= yQ + y'M \\
+   &= yQ + y'(B+Q-A) \\
+   &= y(xC+x'A) + y'(C + R - A) \\
+   &= y(xC+x'A) + y'(C + xA + x'B - A) \\
+   &= (yx' + y'x - 1)A + y'x'B + (yx + y')C
+\end{align*}
+and from before,
+\begin{align*}
+NA &=  \left( \frac{z}{3} + z' \right) A + \frac{z}{3}B + \frac{z}{3}C
+\end{align*}
+Next we find when \( QM \) and \( NA \) intersect.
+\begin{align}
+\label{eq:4.5d}
+yx' + y'x - 1 &= \frac{z}{3} + z' \\
+\label{eq:4.5e}
+y'x' = \frac{z}{3} \\
+\label{eq:4.5f}
+yx + y' = \frac{z}{3}
+\end{align}
+By Equations \ref{eq:4.5e} and \ref{eq:4.5f},
+\begin{align*}
+yx + y' &= y'x' \\
+(1-y')(1-x') + y' - y'x' &= 0 \\
+1 -y' -x' + y'x' + y' - y'x' &= 0 \\
+1-x' &= 0 \\
+x &= 0
+\end{align*}
+When \( x=0 \), Equations \ref{eq:4.5d}, \ref{eq:4.5e}, and \ref{eq:4.5f} all hold. Therefore, \( QM \) and \( NA \) are the same line. If \( x \neq 0 \), then \( QM \) and \( NA \) do not intersect. Therefore, \( QM \) is always parallel to \( NA \). Q.E.D.
+

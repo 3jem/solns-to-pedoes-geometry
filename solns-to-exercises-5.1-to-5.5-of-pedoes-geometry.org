@@ -1,0 +1,121 @@
+#+title: Solutions to Exercises 5.1 to 5.5 of Pedoe's "Geometry: A Comprehensive Course"
+#+author: Joel McBride
+#+options: num:nil toc:nil
+
+* 5.1
+\( Q_2 \) and \( Q_3 \) are trivially collinear but given the conditions of the Theorem we can do better. It turns out \( Q_2 \) and \( Q_3 \) are parallel to \( BC \) and \( B'C' \).
+Proof:
+From the setup of the proof of the Theorem we have,
+\begin{align*}
+k_3C - k_1A &= (k_3-k_1)Q2 \\
+k_1A - k_2B &= (k_1 - k_2)Q_3
+\end{align*}
+But instead of an equation for \( Q_1 \) we have,
+\begin{align*}
+B-C = k(C'-B')
+\end{align*}
+where \( k \) is the proportionality constant between the side lengths.
+But \( k_2B - k_3C = (1-k_3) C' - (1-k_2)B' \) so
+\( k_2 = k_3 = 1 - k \). Using this fact and adding the two equations for \( Q_2 \) and \( Q_3 \) we get,
+\begin{align*}
+k_2 C - k_1 A + k_1 A - k_2B &= (k_2 - k_1)Q_2 + (k_1 - k_2)Q_3 \\
+k_2 (C - B) &= (k_2 - k_1)(Q_2 - Q_3) \\
+C - B &=  \frac{k_2-k_1}{k_2}(Q_2 - Q_3) 
+\end{align*}
+Q.E.D.
+
+* 5.2
+*Note* The converse is not true in general. Proof: Consider the case where \( AA' \), \( BB' \), and \( CC' \) do not intersect one another. Then we have, \( A-A' = k_1 (B-B') = k_2 (C-C') \). Also, let \( k_1,k_2 \neq 1 \). We have,
+\begin{align*}
+A-k_1B &= A' - k_2 B' \\
+A - k_2C &= A' - k_2 C' \\
+k_1 B - k_2C &= k_1 B' - k_2 C'
+\end{align*}
+So,
+\begin{align*}
+(k_1 - k_2)Q_1  &= k_1 B - k_2 C \\
+(k_2-1)Q_2 &= k_2 C - A \\
+(1-k_1)Q_3 &= A - k_1 B
+\end{align*}
+Summing up the equations for the \( Q \)s we get,
+\begin{align*}
+(k_1-k_2)Q_1 + (k_2-1)Q_2 + (1-k_1)Q_3 &= 0
+\end{align*}
+But \( k_1 - k_2 + k_2 - 1 + 1 - k_1 = 0 \) and \( k_1-k_2 \), \( k_2 - 1 \), and \( 1-k_1 \) are not all zero therefore by Theorem III in the text they are collinear. Q.E.D.
+
+But if \( AA' \), \( BB' \), and \( CC' \) do intersect one another then the converse is true. That is they are concurrent. Proof:
+Let \( P \) be the point where \( AA' \) intersects \( BB' \) which exists. \( AA' \), \( BB' \), and \( CC' \) are concurrent if,
+- \( A \), \( A' \), and \( P \) are collinear
+- \( B \), \( B' \), and \( P \) are collinear
+- \( C \), \( C' \), and \( P \) are collinear
+
+Consider the triangles \( BB'Q_1 \) and \( AA'Q_2 \) which are in perspective at \( Q_3 \).
+Then by Desarague's Theorem, the points \( P \), the intersection of \( BQ \) and \( AQ_2 \), and the intersection of \( B'Q_1 \) and \( A'Q_2 \) are collinear. But the intersection of \( BQ \) and \( AQ_2 \) is \( C \), and the intersection of \( B'Q_1 \) and \( A'Q_2 \) is \( C' \). Therefore, \( C \), \( C' \), and \( P \) are collinear.
+And since \( A \), \( A' \), and \( P \) and \( B \), \( B' \), and \( P \) are collinear \( AA' \), \( BB' \), and \( CC' \) are concurrent. Q.E.D.
+
+* 5.3
+We're given,
+\begin{align}
+A_1 - B_1 &= k_1(A_2 - B_2) = k_2(A_3 - B_3) \nonumber \\
+\label{eq:5.3}
+C_1 - A_1 &= k_3(C_2 - A_2) = k_4(C_3 - A_3) \\
+B_1 - C_1 &= k_5(B_2 - C_2) = k_6(B_3 - C_3) \nonumber 
+\end{align}
+But \( (A_1 - B_1) + (C_1 - A_1) + (B_1 - C_1) = 0 \) so,
+\begin{align*}
+(k_1 - k_3)A_2 + (k_5 - k_1)B_2 + (k_3-k_5)C_2 &= 0
+\end{align*}
+which implies (since \( A_2 \), \( B_2 \), \( C_2 \) are not collinear) that \( k_1 = k_3 = k_5 = k \).
+Also,
+\begin{align*}
+(k_2 - k_4)A_3 + (k_6 - k_2)B_3 + (k_4 - k_6)C_3 &= 0
+\end{align*}
+which implies (since \( A_3 \), \( B_3 \), \( C_3 \) are not collinear) that \( k_2 = k_4 = k_6 = k' \).
+By rearranging Equation \ref{eq:5.3}, we have,
+\begin{align*}
+A_1 - kA_2 &= B_1 - kB_2 = C_1 - kC_2 \\
+A_1 - k'A_3 &= B_1 - k'B_3 = C_1 - k'C_3 \\
+kA_2 - k'A_3 &= kB_2 - k'B_3 = kC_2 - k'C_3
+\end{align*}
+Let \( Q_1 \) be the center of perspective of triangles \( A_1B_1C_1 \) and \( A_2B_2C_2 \) (i.e. the intersection of \( A_1A_2 \), \( B_1B_2 \), and \( C_1C_2 \)), \( Q_2 \) be the center of perspective of triangles \( A_1B_1C_1 \) and \( A_3B_3C_3 \) (i.e. the intersection of \( A_1A_3 \), \( B_1B_3 \), and \( C_1C_3 \)), and \( Q_3 \) be the center of perspective of triangles \( A_2B_2C_2 \) and \( A_3B_3C_3 \) (i.e. the intersection of \( A_2A_3 \), \( B_2B_3 \), and \( C_2C_3 \)). \( Q_1 \), \( Q_2 \), and \( Q_3 \) can be written as,
+\begin{align*}
+Q_1 &= \frac{1}{1-k} A_1 + \frac{-k}{1-k} A_2 = \frac{1}{1-k} B_1 + \frac{-k}{1-k} B_2 = \frac{1}{1-k} C_1 + \frac{-k}{1-k} C_2 \\
+Q_2 &= \frac{1}{1-k'} A_1 + \frac{-k'}{1-k'} A_3 = \frac{1}{1-k'} B_1 + \frac{-k'}{1-k'} B_2 = \frac{1}{1-k'} C_1 + \frac{-k'}{1-k'} C_2 \\
+Q_3 &= \frac{k}{k-k'} A_2 + \frac{-k'}{k-k'} A_3 = \frac{k}{k-k'} B_2 + \frac{-k'}{k-k'} B_3 = \frac{k}{k-k'} C_2 + \frac{-k'}{k-k'} C_3
+\end{align*}
+Then we have,
+\begin{align*}
+(1-k)Q_1 - (1-k')Q_2 + (k-k')Q_3 &= A_1 - kA_2 - (A_1 - k'A_3) + (kA_2 - k'B_3) = 0
+\end{align*}
+But  \( (1-k) - (1-k') + (k-k') = 0 \) and \( 1-k \), \( -(1-k') \), and \( k-k' \) are not all zero (for if they were there would be no center of perspectives). Therefore, by Theorem III, \( Q_1 \), \( Q_2 \), and \( Q_3 \) are collinear. Q.E.D.
+
+* 5.4
+We're given,
+\begin{align*}
+P &= xA + x'D \\
+Q &= yB + y'C
+\end{align*}
+and \( \overline{AP} : \overline{PD} = |AB| : |DC| = \overline{BQ} : \overline{QC} \) so \( x = y \).
+Examine \( Q - P \),
+\begin{align*}
+& Q - P \\
+&= xB + x'C - (xA + x'D) \\
+&= x(B-A) + x'(C-D)
+\end{align*}
+Let \( v_1 = x(B-A) \) and \( v_2 = x'(C-D) \). Clearly \( v_1 \) is parallel to \( B-A \) and \( v_2 \) is parallel to \( C-D \) and \( |v_1| = |x||AB| \) and \( |v_2| = |x'||DC| \). What is left to show is \( |v_2| = |v_1|\).
+By Theorem I,
+\begin{align*}
+\frac{x'}{x} &= \frac{|AB|}{|DC|} \\
+x' &= x \frac{|AB|}{|DC|}
+\end{align*}
+So,
+\begin{align*}
+|v_2| &= |x'||CD| \\
+      &= |x| \frac{|AB|}{|DC|} |DC|\\
+      &= |x| |AB| \\
+      &= |v_1|
+\end{align*}
+Thus we can form an isosceles triangle with the vectors \( Q-P \), \( v_1 \), and \( v_2 \). Since the triangle is isosceles the angle \( Q-P \) makes with \( v_1 \) is equal to the angle \( Q-P \) makes with \( v_2 \). In other words, the incline \( Q-P \) makes with \( v_1 \) is the same as the incline \( Q-P \) makes with \( v_2| \). Q.E.D.
+
+* 5.5
+Make the correspondence of the given triangle \( A'B'C' \) with the setup of the previous problem to be \( A'B'C' \Longrightarrow A(AB \bigcap DC)D \) and where \( C \) is a point along \( A'B' \) such that \( 2|AB| = |B'A'| = |B'A| \) and \( B \) is a point along \( A'C' \) such that \( 2|DC| = |B'C'| = |B'D| \). Let \( P \) and \( Q \) be defined as in the previous exercise. From the previous question we know \( Q-P \) bisects \( B'A \) and \( B'D \) and \( \overline{AP}:\overline{PD} = \frac{|AB|}{|DC|} = \overline{BQ}:\overline{QC} \). What is left to show is \( \frac{|B'A|}{|B'D|} = \frac{|AB|}{|AC|} \). By construction of \( C \) and \( B \), \( 2|AB| = |B'A| \) and \( 2|DC| = |B'D| \) thus \( \frac{|B'A|}{|B'D|} = \frac{|AB|}{|AC|} \). Q.E.D.

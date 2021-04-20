@@ -1,0 +1,6 @@
+
+* 6.1
+The new theorem is the Theorem in 6.1 with "parallel" replaced with "perpendicular."
+
+* 6.2
+Any two triangles \( ABC \) and \( PQR \) with corresponding sides parallel are not reciprical figures since, by construction, none of the lines \( DA \), \( DB \), \( DC \) are parallel to \( AB \), \( AC \), \( BC \) therefore are not parallel to any of \( PQ \), \( PR \), \( QR \).
